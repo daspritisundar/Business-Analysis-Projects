@@ -1,4 +1,4 @@
-# Task 1: Market Basket Analysis
+#  Market Basket Analysis
 
 ## Objective
 To identify frequent purchase patterns and uncover relationships between products using association rule mining, with the goal of optimizing product placement, promotions, and inventory management.
@@ -25,5 +25,5 @@ To identify frequent purchase patterns and uncover relationships between product
 
 ---
 
-✅ Task 1 is **completed and documented**.
+✅ Project is **completed and documented**.
 
