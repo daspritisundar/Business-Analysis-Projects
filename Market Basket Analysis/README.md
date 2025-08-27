@@ -6,7 +6,7 @@ To identify frequent purchase patterns and uncover relationships between product
 ## Contents
 - **Data:** Groceries_dataset.csv
 - **Notebook:** Market_Basket_Analysis.ipynb   
-- **Report:** Task1_Report_Market_Basket_Analysis.pdf  
+- **Report:** Report_Market_basket_analysis.pdf  
 
 ## Key Findings
 - Strong associations were identified, such as:
