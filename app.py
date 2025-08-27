@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import numpy as np
-from Notebook.Market_Basket_Analysis import train_model, predict_price
+from Notebook.predict import train_model, predict_price
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
