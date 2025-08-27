@@ -1,3 +1,7 @@
+<img width="1024" height="577" alt="image" src="https://github.com/user-attachments/assets/7a9d0ff8-f4c8-4820-8891-5be93d04d441" />
+
+
+
 #  Market Basket Analysis
 
 ## Objective
