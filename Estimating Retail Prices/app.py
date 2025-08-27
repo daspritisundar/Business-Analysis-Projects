@@ -30,6 +30,7 @@ user_input = {
     'feature_score': feature_score
 }
 
+
 if st.button("Predict Price"):
     score = train_model()
     st.success(f"📈 Model Score: {score}")
