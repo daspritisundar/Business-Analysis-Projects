@@ -26,6 +26,8 @@ To identify frequent purchase patterns and uncover relationships between product
 - Ensure frequent itemsets remain in stock for customer satisfaction.
 - Design targeted promotions based on hidden associations.
 
+## Author
+- **Pritisundar Das**
 ---
 
 ✅ Project is **completed and documented**.
