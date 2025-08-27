@@ -4,9 +4,8 @@
 To identify frequent purchase patterns and uncover relationships between products using association rule mining, with the goal of optimizing product placement, promotions, and inventory management.
 
 ## Contents
-- **Data:** transactions.csv  
-- **Notebook:** Market_Basket_Analysis.ipynb  
-- **Results:** frequent_itemsets.csv, association_rules.csv, plots.png  
+- **Data:** Groceries_dataset.csv
+- **Notebook:** Market_Basket_Analysis.ipynb   
 - **Report:** Task1_Report_Market_Basket_Analysis.pdf  
 
 ## Key Findings
