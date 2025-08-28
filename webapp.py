@@ -16,8 +16,8 @@ if r=="Home":
     #    
     """)
     st.image("Price.png")
-    st.subheader("This App Predict the price of Avocado ->")
-    st.text("Avocado Price Prediction")
+    st.subheader("This App Predict the price of Avocado")
+ 
 
 
 train=pd.read_csv('avocado (1).csv')
@@ -39,23 +39,93 @@ from sklearn.ensemble import RandomForestRegressor
 rfr = RandomForestRegressor(n_estimators = 250,n_jobs=-1)
 rfr.fit(x_train,y_train)
 
-if r=='Avocado Price':
-    st.header("Know the Price of Avocado")
-    Total_Volume=st.number_input(" Total number of avocados sold")
-    blue4046=st.number_input("Total number of small avocados sold (PLU 4046)")
-    b4225=st.number_input("Total number of medium avocados sold (PLU 4225)")
-    d4770=st.number_input("Total number of large avocados sold (PLU 4770)")
-    Total_Bags=st.number_input("Total number of bags")
-    Small_Bags=st.number_input("Total number of small bags")
-    Large_Bags=st.number_input("Total number of large bags")
-    XLarge_Bags=st.number_input("Total number of extra large bags")
-    type=st.number_input("whether the price/amount is for conventional or organic")
-    year=st.number_input("Year of sale")
+if r == 'Avocado Price':
+    st.header("Avocado Price Prediction")
+
+    st.markdown("Please enter the following details about avocado sales:")
+
+    Total_Volume = st.number_input(
+        "Total Volume Sold",
+        min_value=0.0,
+        format="%.2f",
+        help="Enter the total number of avocados sold (in units)."
+    )
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        small_avocados = st.number_input(
+            "Small Avocados Sold (PLU 4046)", min_value=0, step=1,
+            help="Number of small avocados sold."
+        )
+    with col2:
+        medium_avocados = st.number_input(
+            "Medium Avocados Sold (PLU 4225)", min_value=0, step=1,
+            help="Number of medium avocados sold."
+        )
+    with col3:
+        large_avocados = st.number_input(
+            "Large Avocados Sold (PLU 4770)", min_value=0, step=1,
+            help="Number of large avocados sold."
+        )
+
+    st.markdown("### Bag Details")
+    Total_Bags = st.number_input(
+        "Total Number of Bags", min_value=0, step=1,
+        help="Total bags used for packaging avocados."
+    )
+
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        small_bags = st.number_input(
+            "Small Bags", min_value=0, step=1,
+            help="Number of small bags."
+        )
+    with col5:
+        large_bags = st.number_input(
+            "Large Bags", min_value=0, step=1,
+            help="Number of large bags."
+        )
+    with col6:
+        extra_large_bags = st.number_input(
+            "Extra Large Bags", min_value=0, step=1,
+            help="Number of extra large bags."
+        )
+
+    avocado_type = st.selectbox(
+        "Avocado Type",
+        options=["Conventional", "Organic"],
+        help="Select whether the avocados are conventional or organic."
+    )
+
+    year = st.number_input(
+        "Year of Sale",
+        min_value=2000,
+        max_value=2100,
+        step=1,
+        help="Enter the year when the sale took place."
+    )
+
     
     
-    ypred=rfr.predict([[Total_Volume,blue4046,b4225,d4770,Total_Bags,Small_Bags,Large_Bags,XLarge_Bags,type,year]])
-    if(st.button("Predict")):
-        st.success(f"Your Predicted Avocado Price Is {abs(ypred)}")
+   # Make prediction only when Predict button is clicked
+if st.button("Predict"):
+    # Prepare feature values in correct order, matching the model input
+    features = [[
+        Total_Volume,
+        small_avocados,
+        medium_avocados,
+        large_avocados,
+        Total_Bags,
+        small_bags,
+        large_bags,
+        extra_large_bags,
+        1 if avocado_type == "Organic" else 0,  # Encode type as numeric (assuming model expects this)
+        year
+    ]]
+
+    ypred = rfr.predict(features)
+    st.success(f"Your Predicted Avocado Price is: ${abs(ypred[0]):.2f}")
+
     
     
         
