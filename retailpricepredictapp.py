@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score
 
 # Function to load model
 def load_model():
-    model_path = os.path.join('sklearn_price_model.pkl')
+    model_path = os.path.join('model/sklearn_price_model.pkl')
     if os.path.exists(model_path):
         try:
             return joblib.load(model_path), True
