@@ -251,7 +251,7 @@ elif r == "🥑 Price Predictor":
         with col2:
             year = st.number_input(
                 "Year of Sale",
-                min_value=2000,
+                min_value=2015,
                 max_value=2030,
                 value=2024,
                 step=1,
