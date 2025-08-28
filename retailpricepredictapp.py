@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 import numpy as np
-from predict import predict_price
+from predict import predict_price, get_model_accuracy
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -51,6 +51,15 @@ if model_loaded:
 if st.button("Predict Price"):
     if model_loaded:
         price = predict_price(user_input)  # Use the default function without passing model
-        st.success(f"💵 Estimated Price: ₹{price}")
+        
+        # Get model accuracy (R² score for regression models)
+        try:
+            accuracy = get_model_accuracy()
+            accuracy_percent = round(accuracy * 100, 2)
+            st.success(f"💵 Estimated Price: ₹{price}")
+            st.info(f"📊 Model Accuracy: {accuracy_percent}% (R² score)")
+        except Exception as e:
+            st.success(f"💵 Estimated Price: ₹{price}")
+            st.warning(f"Could not retrieve model accuracy: {e}")
     else:
         st.error("Cannot make predictions without a trained model.")
