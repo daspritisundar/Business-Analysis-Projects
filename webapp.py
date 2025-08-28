@@ -17,9 +17,9 @@ warnings.filterwarnings('ignore')
 def load_and_train_model():
     """Loads the data and trains the RandomForestRegressor model."""
     try:
-        train = pd.read_csv('avocado(1).csv')
+        train = pd.read_csv('avocado (1).csv')
     except FileNotFoundError:
-        st.error("Data file 'avocado(1).csv' not found. Please ensure the file path is correct.")
+        st.error("Data file 'avocado (1).csv' not found. Please ensure the file path is correct.")
         return None, None
 
     # Drop unnecessary columns
