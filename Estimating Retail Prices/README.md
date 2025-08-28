@@ -83,7 +83,7 @@ The app enables experimentation with product attributes (category, brand, rating
 
 ## 👤 Author
 
-Pritisundar Das
+## Pritisundar Das
 
 ---
 
