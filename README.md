@@ -1,4 +1,5 @@
-<img width="1400" height="2000" alt="image" src="https://github.com/user-attachments/assets/e51db869-6683-4dd4-a7db-c0be2444dce8" />
+<img width="1400" height="2000" alt="image" src="https://github.com/user-attachments/assets/2a2a7683-1906-4779-9a13-1f8cb9ecace8" />
+
 
 
 # Business Analytics Projects 📊  
