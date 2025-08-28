@@ -20,7 +20,7 @@ if r=="Home":
     st.text("Avocado Price Prediction")
 
 
-train=pd.read_csv('avocado.csv')
+train=pd.read_csv('Data/avocado.csv')
 train.drop(['Unnamed: 0','region'],axis=1,inplace=True)
 
 x = train.drop(['Date','AveragePrice'],axis=1)
