@@ -25,11 +25,11 @@ def train_model():
     model = LinearRegression()
     model.fit(X_train, y_train)
     score = model.score(X_test, y_test)
-    joblib.dump((model, encoder, scaler), 'model/sklearn_price_model.pkl')
+    joblib.dump((model, encoder, scaler), 'sklearn_price_model.pkl')
     return score
 
 def predict_price(data_dict):
-    model, encoder, scaler = joblib.load('model/sklearn_price_model.pkl')
+    model, encoder, scaler = joblib.load('sklearn_price_model.pkl')
 
     cat_features = [[data_dict['category'], data_dict['brand']]]
     num_features = [[
