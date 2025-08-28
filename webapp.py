@@ -41,7 +41,6 @@ rfr.fit(x_train,y_train)
 
 if r == 'Avocado Price':
     st.header("Avocado Price Prediction")
-
     st.markdown("Please enter the following details about avocado sales:")
 
     Total_Volume = st.number_input(
@@ -50,7 +49,6 @@ if r == 'Avocado Price':
         format="%.2f",
         help="Enter the total number of avocados sold (in units)."
     )
-
     col1, col2, col3 = st.columns(3)
     with col1:
         small_avocados = st.number_input(
@@ -67,13 +65,11 @@ if r == 'Avocado Price':
             "Large Avocados Sold (PLU 4770)", min_value=0, step=1,
             help="Number of large avocados sold."
         )
-
     st.markdown("### Bag Details")
     Total_Bags = st.number_input(
         "Total Number of Bags", min_value=0, step=1,
         help="Total bags used for packaging avocados."
     )
-
     col4, col5, col6 = st.columns(3)
     with col4:
         small_bags = st.number_input(
@@ -90,13 +86,11 @@ if r == 'Avocado Price':
             "Extra Large Bags", min_value=0, step=1,
             help="Number of extra large bags."
         )
-
     avocado_type = st.selectbox(
         "Avocado Type",
         options=["Conventional", "Organic"],
         help="Select whether the avocados are conventional or organic."
     )
-
     year = st.number_input(
         "Year of Sale",
         min_value=2000,
@@ -105,29 +99,19 @@ if r == 'Avocado Price':
         help="Enter the year when the sale took place."
     )
 
-    
-    
-   # Make prediction only when Predict button is clicked
-if st.button("Predict"):
-    # Prepare feature values in correct order, matching the model input
-    features = [[
-        Total_Volume,
-        small_avocados,
-        medium_avocados,
-        large_avocados,
-        Total_Bags,
-        small_bags,
-        large_bags,
-        extra_large_bags,
-        1 if avocado_type == "Organic" else 0,  # Encode type as numeric (assuming model expects this)
-        year
-    ]]
-
-    ypred = rfr.predict(features)
-    st.success(f"Your Predicted Avocado Price is: ${abs(ypred[0]):.2f}")
-
-    
-    
-        
-        
-    
+    # Make prediction only when Predict button is clicked
+    if st.button("Predict"):
+        features = [[
+            Total_Volume,
+            small_avocados,
+            medium_avocados,
+            large_avocados,
+            Total_Bags,
+            small_bags,
+            large_bags,
+            extra_large_bags,
+            1 if avocado_type == "Organic" else 0,
+            year
+        ]]
+        ypred = rfr.predict(features)
+        st.success(f"Your Predicted Avocado Price is: ${abs(ypred[0]):.2f}")
