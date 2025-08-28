@@ -1,3 +1,6 @@
+<img width="1400" height="2000" alt="image" src="https://github.com/user-attachments/assets/e51db869-6683-4dd4-a7db-c0be2444dce8" />
+
+
 # Business Analytics Projects 📊  
 
 ## 📌 Overview  
