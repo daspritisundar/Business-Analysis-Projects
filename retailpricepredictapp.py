@@ -2,13 +2,25 @@ import streamlit as st
 import pandas as pd
 import os
 import numpy as np
-from  predict import train_model, predict_price
+from predict import predict_price
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import OneHotEncoder,StandardScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.metrics import accuracy_score
 
+# Function to load model
+def load_model():
+    model_path = os.path.join('sklearn_price_model.pkl')
+    if os.path.exists(model_path):
+        try:
+            return joblib.load(model_path), True
+        except Exception as e:
+            st.error(f"Error loading model: {e}")
+            return None, False
+    else:
+        st.error("Model not found in the model directory. Please ensure the model is properly saved.")
+        return None, False
   
 st.title("💰 Product Price Estimator")
 
@@ -30,9 +42,15 @@ user_input = {
     'feature_score': feature_score
 }
 
+# Load the model when the app starts
+model_data, model_loaded = load_model()
+
+if model_loaded:
+    st.info(f"📈 Model loaded successfully from model directory.")
 
 if st.button("Predict Price"):
-    score = train_model()
-    st.success(f"📈 Model Score: {score}")
-    price = predict_price(user_input)
-    st.success(f"💵 Estimated Price: ₹{price}")
+    if model_loaded:
+        price = predict_price(user_input)  # Use the default function without passing model
+        st.success(f"💵 Estimated Price: ₹{price}")
+    else:
+        st.error("Cannot make predictions without a trained model.")
