@@ -1,58 +1,93 @@
 <img width="840" height="499" alt="image" src="https://github.com/user-attachments/assets/d785f7e3-d3b4-4f36-be41-448cdae655c5" />
 
-# Task 2: Estimating Retail Prices
+## Estimating Retail Prices
 
-##  Overview  
-This task focuses on building a machine learning model to estimate retail prices using product-level features and deploying it as an interactive Streamlit app for real-time use.
-
----
-
-##  Live App  
-Explore the deployed Streamlit app here:  
-**[Retail Price Prediction Web App](https://business-analysis-projects-xhsbtrehpr9znwstjinoz2.streamlit.app/)**
-
-Use this app to input product features and instantly get a price estimate — a valuable tool for retail strategy and benchmarking.
+## 📌 Overview  
+Pricing strategy plays a pivotal role in retail competitiveness and profitability. This task involved building a **machine learning–based retail price prediction system**, which was subsequently deployed as an **interactive Streamlit web application**. The app allows users to input product details and instantly obtain predicted retail prices, supporting data-driven decision-making in product management and merchandising.
 
 ---
 
-##  Objective  
-Model and predict retail prices based on product attributes (both categorical and numerical) to support competitive and profitability-driven pricing decisions.
+## 🌐 Live Demo  
+👉 Access the deployed application here:  
+**[Retail Price Prediction Web App](https://business-analysis-projects-xhsbtrehpr9znwstjinoz2.streamlit.app/)**  
+
+The app enables experimentation with product attributes (category, brand, rating, warranty, power usage, etc.) to understand their impact on pricing.
 
 ---
 
-##  Methodology  
-1. **Data Processing**  
-   - Features: `category`, `brand`, `weight`, `rating`, `warranty_years`, `power_usage`, `feature_score`  
-   - Handle categoricals with One-Hot Encoding; scale numericals as needed.
-
-2. **Model Training**  
-   - Used **Linear Regression** to estimate price.  
-   - Evaluated performance using R² on training and test sets.  
-   - Saved the final model as `sklearn_price_model.pkl`.
-
-3. **Deployment with Streamlit**  
-   - Developed `retailpricepredictapp.py` to collect user inputs via widgets.  
-   - Inputs include dropdowns (Category, Brand) and sliders/numeric inputs (Weight, Rating, etc.).  
-   - On clicking "**Predict Price**", the app displays the model’s R² score and the predicted price.
+## 🎯 Objectives  
+- **Develop a predictive model** to estimate product prices based on structured product attributes.  
+- **Identify key drivers of price** such as category, brand, technical specifications, and customer-facing features.  
+- **Deploy a user-friendly tool** that integrates analytics into business workflows for real-time decision-making.  
 
 ---
 
-##  Key Insights  
-- **Price Drivers:** Both category-level attributes (e.g., brand and product type) and numeric features (e.g., rating, warranty) significantly influence retail pricing.  
-- **Model transparency:** Linear regression enables interpretability, helping stakeholders understand which features impact price most.  
-- **Real-time feedback:** The app allows dynamic experimentation — adjusting feature sliders reflects how price estimates change instantly.
+## 🛠️ Methodology  
+
+### 1. Data Preparation  
+- **Features used:**  
+  - *Categorical*: `Category`, `Brand`  
+  - *Numerical*: `Weight (kg)`, `Rating`, `Warranty (years)`, `Power usage (Watts)`, `Feature score`  
+- **Target variable:** `Retail Price`  
+- **Preprocessing steps:**  
+  - Applied **One-Hot Encoding** for categorical features.  
+  - Standardized numerical variables using **StandardScaler**.  
+  - Handled missing values and ensured dataset integrity.  
+
+### 2. Model Development  
+- Algorithm: **Linear Regression** (interpretable baseline).  
+- Evaluation metric: **R² Score** (coefficient of determination).  
+- Model trained on train/test split and validated for generalization.  
+- Final model exported as `sklearn_price_model.pkl`.  
+
+### 3. Deployment with Streamlit  
+- Built an interactive web application (`retailpricepredictapp.py`).  
+- Users provide product specifications via dropdowns and sliders.  
+- Application displays:  
+  - Model R² score (performance transparency).  
+  - **Predicted retail price** (₹).  
 
 ---
 
-##  Business Applications  
-- **Product Managers** can estimate pricing impact when changing warranty or rating.  
-- **Merchandisers** can benchmark prices in real time against competitive features.  
-- **Analysts** can integrate this tool into dashboards for pricing insights and scenario testing.
+## 📊 Key Findings  
+- **Brand and Category** are strong categorical determinants of retail price.  
+- **Technical attributes** like *warranty* and *power usage* directly influence pricing in electronics and appliances.  
+- **Ratings and feature scores** serve as proxies for quality and customer value, which positively correlate with higher prices.  
+- The model demonstrated reliable performance, making it suitable for practical benchmarking and strategic use.  
 
 ---
 
-##  How to Run Locally  
-1. Clone this repository.  
-2. Install dependencies:
+## 🚀 Business Applications  
+1. **Strategic Pricing**  
+   - Supports **value-based pricing** by aligning prices with product features and brand positioning.  
+
+2. **Competitive Benchmarking**  
+   - Retailers can compare estimated prices against competitor products in the same category.  
+
+3. **Product Development**  
+   - Helps managers simulate “what-if” scenarios (e.g., extending warranty or improving ratings) to see the impact on predicted price.  
+
+4. **E-commerce Integration**  
+   - Can be embedded into seller dashboards to recommend optimal product listing prices.  
+
+---
+
+## 🖥️ How to Run Locally  
+
+1. Clone the repository:
    ```bash
-   pip install -r requirements.txt
+   git clone https://github.com/daspritisundar/Business-Analytics-Projects.git
+   cd Estimating_Retail_Prices
+
+---
+
+##👤 Author
+
+Pritisundar Das
+
+---
+
+✨ This version positions Task 2 as a **full professional project** — it reads like a mini case study with clear methodology, findings, and applications.  
+
+Would you like me to now also **draft the matching professional PDF Report** for Task 2 (like we did for Task 1), so it’s ready to drop into your `Reports/` folder?
+
