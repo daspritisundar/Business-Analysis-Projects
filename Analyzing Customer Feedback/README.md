@@ -70,15 +70,8 @@ The system leverages **Apache Airflow** for workflow orchestration, **Hugging Fa
 ---
 
 ## 🖥️ How to Run Locally  
-
-## 1. Clone the Repository
+1. Clone the Repository
 ```bash
 git clone https://github.com/daspritisundar/Business-Analytics-Projects.git
 cd Task3_Analyzing_Customer_Feedback/ETL_Pipeline
-
----
-
-## ✅ Task Status
-
-Completed — ETL pipeline built, automated with Airflow, data stored in MySQL, sentiment analyzed with BERT, and insights visualized for business impact.
 
