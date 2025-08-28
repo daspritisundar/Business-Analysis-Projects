@@ -1,4 +1,8 @@
-# Task 3: Analyzing Customer Feedback 📝
+![customer-feedback-analysis](https://github.com/user-attachments/assets/12bb72de-6592-49d8-ad7c-ca82413ed92a)
+
+
+
+# Analyzing Customer Feedback 📝
 
 ## 📌 Overview  
 Understanding customer sentiment is critical for banks to maintain trust, improve service quality, and enhance customer satisfaction.  
