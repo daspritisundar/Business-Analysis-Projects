@@ -15,7 +15,7 @@ if r=="Home":
     # Avocado Price Predictive System
     #    
     """)
-    st.image("Price.png")
+    st.image("avocado.png")
     st.subheader("This App Predict the price of Avocado ->")
     st.text("Avocado Price Prediction")
 
