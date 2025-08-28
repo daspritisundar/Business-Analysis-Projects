@@ -87,5 +87,4 @@ The app enables experimentation with product attributes (category, brand, rating
 
 ---
 
-✨ This version positions Task 2 as a **full professional project** — it reads like a mini case study with clear methodology, findings, and applications.  
 
