@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -81,14 +80,13 @@ def load_and_train_model():
         test_score = rfr.score(x_test, y_test)
         
         return rfr, scaler, le, train_score, test_score
-    
-     except FileNotFoundError:
-        st.error("❌ Dataset file not found. Please ensure 'avocado.csv' is in the correct location.")
+        
+    except FileNotFoundError:
+        st.error("❌ Dataset file not found. Please ensure 'avocado (1).csv' is in the correct location.")
         return None, None, None, None, None
-     except Exception as e:
+    except Exception as e:
         st.error(f"❌ Error loading model: {str(e)}")
-        return None, None, None, None, None   
-    
+        return None, None, None, None, None
 
 # Load model
 rfr, scaler, le, train_score, test_score = load_and_train_model()
@@ -361,7 +359,7 @@ elif r == "📊 Model Performance":
 # Footer
 st.markdown("---")
 st.markdown(
-  """
+    """
     <div style='text-align: center; color: #666; padding: 2rem;'>
         🥑 Avocado Price Predictor | Built with Streamlit & Scikit-learn<br>
         Made with ❤️ for better market predictions
@@ -370,6 +368,4 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
 print("Here's your improved, user-friendly and professional Streamlit app:")
-#print(streamlit_code)
