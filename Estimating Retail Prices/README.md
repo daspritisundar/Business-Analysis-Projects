@@ -20,28 +20,6 @@ Model and predict retail prices based on product attributes (both categorical an
 
 ---
 
-##  Project Structure
-Estimating_Retail_Prices/
-│
-├── Data/
-│   └── products_200k.csv
-│
-├── Model/
-│   └── sklearn_price_model.pkl
-│
-├── Notebooks/
-│   └── predict.py
-│
-├── App/
-│   └── retailpricepredictapp.py
-│
-├── Reports/
-│   └── Task2_Report_Estimating_Retail_Prices.pdf
-│
-└── README.md
-
----
-
 ##  Methodology  
 1. **Data Processing**  
    - Features: `category`, `brand`, `weight`, `rating`, `warranty_years`, `power_usage`, `feature_score`  
