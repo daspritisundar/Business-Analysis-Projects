@@ -4,6 +4,7 @@ import joblib
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+import os
 
 def train_model():
     df = pd.read_csv('products_200k.csv')
@@ -25,6 +26,7 @@ def train_model():
     model = LinearRegression()
     model.fit(X_train, y_train)
     score = model.score(X_test, y_test)
+    os.makedirs('model', exist_ok=True)  
     joblib.dump((model, encoder, scaler), 'model/sklearn_price_model.pkl')
     return score
 
