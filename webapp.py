@@ -82,12 +82,7 @@ def load_and_train_model():
         
         return rfr, scaler, le, train_score, test_score
         
-    except FileNotFoundError:
-        st.error("❌ Dataset file not found. Please ensure 'avocado.csv' is in the correct location.")
-        return None, None, None, None, None
-    except Exception as e:
-        st.error(f"❌ Error loading model: {str(e)}")
-        return None, None, None, None, None
+    
 
 # Load model
 rfr, scaler, le, train_score, test_score = load_and_train_model()
@@ -256,7 +251,7 @@ elif r == "🥑 Price Predictor":
         with col2:
             year = st.number_input(
                 "Year of Sale",
-                min_value=2015,
+                min_value=2000,
                 max_value=2030,
                 value=2024,
                 step=1,
