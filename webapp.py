@@ -50,7 +50,7 @@ def load_and_train_model():
     """Load data and train the model"""
     try:
         # Load the dataset
-        train = pd.read_csv('Predicting Avocado Prices/Data/avocado.csv')
+        train = pd.read_csv('avocado (1).csv')
         
         # Data preprocessing
         train.drop(['Unnamed: 0', 'region'], axis=1, inplace=True)
@@ -371,4 +371,4 @@ st.markdown(
 
 
 print("Here's your improved, user-friendly and professional Streamlit app:")
-print(streamlit_code)
+#print(streamlit_code)
