@@ -1,3 +1,6 @@
+<img width="500" height="261" alt="image" src="https://github.com/user-attachments/assets/18f0059e-71e6-4ed3-b9c2-f38c1f47ba16" />
+
+
 # Task 4: Predicting Avocado Prices 🥑
 
 ## 📌 Overview  
