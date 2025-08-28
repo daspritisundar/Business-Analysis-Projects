@@ -69,9 +69,16 @@ The system leverages **Apache Airflow** for workflow orchestration, **Hugging Fa
 
 ---
 
-## 🖥️ How to Run Locally  
-1. Clone the Repository
-```bash
-git clone https://github.com/daspritisundar/Business-Analytics-Projects.git
-cd Task3_Analyzing_Customer_Feedback/ETL_Pipeline
 
+## 🖥️ How to Run Locally  
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/daspritisundar/Business-Analytics-Projects.git
+   cd Estimating_Retail_Prices
+
+---
+
+## 👤 Author
+
+## Pritisundar Das
