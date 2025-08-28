@@ -367,7 +367,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-'''
+
 
 print("Here's your improved, user-friendly and professional Streamlit app:")
 print(streamlit_code)
